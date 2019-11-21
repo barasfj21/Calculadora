@@ -15,7 +15,7 @@ public class Compuertas {
 	public Boolean NOR(Boolean a,Boolean b,Boolean c,Boolean d) {
 		return NOT(OR(a,b,c,d));
 	}
-	public static Boolean XOR(Boolean a,Boolean b) {
+	public Boolean XOR(Boolean a,Boolean b) {
 		return (NAND(NAND(a,NAND(b,a,true,true),true,true),NAND(b,NAND(b,a,true,true),true,true),true,true));
     }
 	public static void main(String []args) {
