@@ -6,10 +6,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.Caret;
+
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
@@ -18,6 +21,7 @@ public class Calculadora extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private JButton btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btnMas,btnMenos,btn_0,btn_1,btn_2,btn_3,btn_4,btn_5,btn_6,btn_7,btn_8,btn_9,btnClear;
 	
 	//Lista con los numeros en boolean
 	Boolean[] cero = {false,false,false,false};
@@ -72,125 +76,49 @@ public class Calculadora extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton button = new JButton("1");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if (button.getModel().isPressed())
-					primerOperando = uno;
-			}
-		});
-		button.setBounds(30, 51, 58, 23);
-		contentPane.add(button);
+		btn4 = new JButton("4");
+		btn4.setBounds(30, 85, 58, 23);
+		contentPane.add(btn4);
 		
-		JButton button_1 = new JButton("4");
-		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_1.getModel().isPressed())
-					primerOperando = cuatro;
-			}
-		});
-		button_1.setBounds(30, 85, 58, 23);
-		contentPane.add(button_1);
+		btn7 = new JButton("7");
+		btn7.setBounds(30, 119, 58, 23);
+		contentPane.add(btn7);
 		
-		JButton button_2 = new JButton("7");
-		button_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_2.getModel().isPressed())
-					primerOperando = siete;
-			}
-		});
-		button_2.setBounds(30, 119, 58, 23);
-		contentPane.add(button_2);
+		btn2 = new JButton("2");
+		btn2.setBounds(98, 51, 58, 23);
+		contentPane.add(btn2);
 		
-		JButton button_4 = new JButton("2");
-		button_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_4.getModel().isPressed())
-					primerOperando = dos;
-			}
-		});
-		button_4.setBounds(98, 51, 58, 23);
-		contentPane.add(button_4);
+		btn5 = new JButton("5");
+		btn5.setBounds(98, 85, 58, 23);
+		contentPane.add(btn5);
 		
-		JButton button_5 = new JButton("5");
-		button_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_5.getModel().isPressed())
-					primerOperando = cinco;
-			}
-		});
-		button_5.setBounds(98, 85, 58, 23);
-		contentPane.add(button_5);
+		btn8 = new JButton("8");
+		btn8.setBounds(98, 119, 58, 23);
+		contentPane.add(btn8);
 		
-		JButton button_6 = new JButton("8");
-		button_6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_6.getModel().isPressed())
-					primerOperando = ocho;
-			}
-		});
-		button_6.setBounds(98, 119, 58, 23);
-		contentPane.add(button_6);
+		btn0 = new JButton("0");
+		btn0.setBounds(98, 153, 58, 23);
+		contentPane.add(btn0);
 		
-		JButton button_7 = new JButton("0");
-		button_7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_7.getModel().isPressed())
-					primerOperando = cero;
-			}
-		});
-		button_7.setBounds(98, 153, 58, 23);
-		contentPane.add(button_7);
+		btn3 = new JButton("3");
+		btn3.setBounds(166, 51, 58, 23);
+		contentPane.add(btn3);
 		
-		JButton button_8 = new JButton("3");
-		button_8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_8.getModel().isPressed())
-					primerOperando = tres;
-			}
-		});
-		button_8.setBounds(166, 51, 58, 23);
-		contentPane.add(button_8);
+		btn6 = new JButton("6");
+		btn6.setBounds(166, 85, 58, 23);
+		contentPane.add(btn6);
 		
-		JButton button_9 = new JButton("6");
-		button_9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_9.getModel().isPressed())
-					primerOperando = seis;
-			}
-		});
-		button_9.setBounds(166, 85, 58, 23);
-		contentPane.add(button_9);
+		btn9 = new JButton("9");
+		btn9.setBounds(166, 119, 58, 23);
+		contentPane.add(btn9);
 		
-		JButton button_10 = new JButton("9");
-		button_10.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_10.getModel().isPressed())
-					primerOperando = nueve;
-			}
-		});
-		button_10.setBounds(166, 119, 58, 23);
-		contentPane.add(button_10);
+		btnMas = new JButton("+");
+		btnMas.setBounds(264, 64, 41, 31);
+		contentPane.add(btnMas);
 		
-		JButton button_3 = new JButton("+");
-		button_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_3.getModel().isPressed())
-					senalOperacion = false;
-			}
-		});
-		button_3.setBounds(264, 64, 41, 31);
-		contentPane.add(button_3);
-		
-		JButton button_11 = new JButton("-");
-		button_11.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_11.getModel().isPressed())
-					senalOperacion = true;
-			}
-		});
-		button_11.setBounds(264, 111, 41, 31);
-		contentPane.add(button_11);
+		btnMenos = new JButton("-");
+		btnMenos.setBounds(264, 111, 41, 31);
+		contentPane.add(btnMenos);
 		
 		textField = new JTextField();
 		textField.setBounds(251, 223, 74, 20);
@@ -201,128 +129,154 @@ public class Calculadora extends JFrame {
 		lblResultado.setBounds(275, 198, 49, 14);
 		contentPane.add(lblResultado);
 		
-		JButton button_12 = new JButton("1");
-		button_12.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_12.getModel().isPressed())
-					segundoOperando = uno;
-				asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
-				
-			}
-		});
-		button_12.setBounds(339, 51, 58, 23);
-		contentPane.add(button_12);
+		btn_1 = new JButton("1");
+		btn_1.setBounds(339, 51, 58, 23);
+		contentPane.add(btn_1);
 		
-		JButton button_13 = new JButton("4");
-		button_13.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_13.getModel().isPressed())
-					segundoOperando = cuatro;
-				asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
-			}
-		});
-		button_13.setBounds(339, 85, 58, 23);
-		contentPane.add(button_13);
+		btn_4 = new JButton("4");
+		btn_4.setBounds(339, 85, 58, 23);
+		contentPane.add(btn_4);
 		
-		JButton button_14 = new JButton("7");
-		button_14.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_14.getModel().isPressed())
-					segundoOperando = siete;
-				asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
-			}
-		});
-		button_14.setBounds(339, 119, 58, 23);
-		contentPane.add(button_14);
+		btn_7 = new JButton("7");
+		btn_7.setBounds(339, 119, 58, 23);
+		contentPane.add(btn_7);
 		
-		JButton button_15 = new JButton("2");
-		button_15.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_15.getModel().isPressed())
-					segundoOperando = dos;
-				asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
-
-			}
-		});
-		button_15.setBounds(407, 51, 58, 23);
-		contentPane.add(button_15);
+		btn_2 = new JButton("2");
+		btn_2.setBounds(407, 51, 58, 23);
+		contentPane.add(btn_2);
 		
-		JButton button_16 = new JButton("5");
-		button_16.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_16.getModel().isPressed())
-					segundoOperando = cinco;
-				asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
-
-			}
-		});
-		button_16.setBounds(407, 85, 58, 23);
-		contentPane.add(button_16);
+		btn_5 = new JButton("5");
+		btn_5.setBounds(407, 85, 58, 23);
+		contentPane.add(btn_5);
 		
-		JButton button_17 = new JButton("8");
-		button_17.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_17.getModel().isPressed())
-					segundoOperando = ocho;
-				asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
-
-			}
-		});
-		button_17.setBounds(407, 119, 58, 23);
-		contentPane.add(button_17);
+		btn_8 = new JButton("8");
+		btn_8.setBounds(407, 119, 58, 23);
+		contentPane.add(btn_8);
 		
-		JButton button_18 = new JButton("0");
-		button_18.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_18.getModel().isPressed())
-					segundoOperando = cero;
-				asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
-
-			}
-		});
-		button_18.setBounds(407, 153, 58, 23);
-		contentPane.add(button_18);
+		btn_0 = new JButton("0");
+		btn_0.setBounds(407, 153, 58, 23);
+		contentPane.add(btn_0);
 		
-		JButton button_19 = new JButton("3");
-		button_19.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_19.getModel().isPressed())
-					segundoOperando = tres;
-				asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
-
-			}
-		});
-		button_19.setBounds(475, 51, 58, 23);
-		contentPane.add(button_19);
+		btn_3 = new JButton("3");
+		btn_3.setBounds(475, 51, 58, 23);
+		contentPane.add(btn_3);
 		
-		JButton button_20 = new JButton("6");
-		button_20.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_20.getModel().isPressed())
-					segundoOperando = seis;
-				asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
-
-			}
-		});
-		button_20.setBounds(475, 85, 58, 23);
-		contentPane.add(button_20);
+		btn_6 = new JButton("6");
+		btn_6.setBounds(475, 85, 58, 23);
+		contentPane.add(btn_6);
 		
-		JButton button_21 = new JButton("9");
-		button_21.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (button_21.getModel().isPressed())
-					segundoOperando = nueve;
-				asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
-
-			}
-		});
-		button_21.setBounds(475, 119, 58, 23);
-		contentPane.add(button_21);
+		btn_9 = new JButton("9");
+		btn_9.setBounds(475, 119, 58, 23);
+		contentPane.add(btn_9);
 		
-		JButton btnClear = new JButton("Clear");
+		btnClear = new JButton("Clear");
 		btnClear.setBounds(243, 273, 89, 23);
 		contentPane.add(btnClear);
+		
+		btn1 = new JButton("1");
+		btn1.setBounds(30, 51, 58, 23);
+		contentPane.add(btn1);
+		
+		btn0.addActionListener(new AccionesPanel1());
+		btn1.addActionListener(new AccionesPanel1());
+		btn2.addActionListener(new AccionesPanel1());
+		btn3.addActionListener(new AccionesPanel1());
+		btn4.addActionListener(new AccionesPanel1());
+		btn5.addActionListener(new AccionesPanel1());
+		btn6.addActionListener(new AccionesPanel1());
+		btn7.addActionListener(new AccionesPanel1());
+		btn8.addActionListener(new AccionesPanel1());
+		btn9.addActionListener(new AccionesPanel1());
+		btnMas.addActionListener(new AccionesPanel1());
+		btnMenos.addActionListener(new AccionesPanel1());
+		btnClear.addActionListener(new AccionesPanel1());
+		btn_0.addActionListener(new AccionesPanel2());
+		btn_1.addActionListener(new AccionesPanel2());
+		btn_2.addActionListener(new AccionesPanel2());
+		btn_3.addActionListener(new AccionesPanel2());
+		btn_4.addActionListener(new AccionesPanel2());
+		btn_5.addActionListener(new AccionesPanel2());
+		btn_6.addActionListener(new AccionesPanel2());
+		btn_7.addActionListener(new AccionesPanel2());
+		btn_8.addActionListener(new AccionesPanel2());
+		btn_9.addActionListener(new AccionesPanel2());
 	}
-	
-
+	private class AccionesPanel1 implements ActionListener{ //maneja las acciones de los botones y menuitems de la ventana
+		public void actionPerformed(ActionEvent capturador) {//captura los objetos en accion
+			if(capturador.getSource()==btn0){
+				primerOperando = cero;
+			}
+			if(capturador.getSource()==btn1){
+				primerOperando = uno;
+			}
+			if(capturador.getSource()==btn2){
+				primerOperando = dos;
+			}
+			if(capturador.getSource()==btn3){
+				primerOperando = tres;
+			}
+			if(capturador.getSource()==btn4){
+				primerOperando = cuatro;
+			}
+			if(capturador.getSource()==btn5){
+				primerOperando = cinco;
+			}
+			if(capturador.getSource()==btn6){
+				primerOperando = seis;
+			}
+			if(capturador.getSource()==btn7){
+				primerOperando = siete;
+			}
+			if(capturador.getSource()==btn8){
+				primerOperando = ocho;
+			}
+			if(capturador.getSource()==btn9){
+				primerOperando = nueve;
+			}
+			if(capturador.getSource()==btnMas){
+				senalOperacion = false;
+			}
+			if(capturador.getSource()==btnMenos){
+				senalOperacion = true;
+			}
+			if(capturador.getSource()==btnClear){
+				
+			}
+		}	
+	}
+	private class AccionesPanel2 implements ActionListener{ //maneja las acciones de los botones y menuitems de la ventana
+		public void actionPerformed(ActionEvent capturador) {//captura los objetos en accion
+			if(capturador.getSource()==btn_0){
+				segundoOperando = cero;
+			}
+			if(capturador.getSource()==btn_1){
+				segundoOperando = uno;
+			}
+			if(capturador.getSource()==btn_2){
+				segundoOperando = dos;
+			}
+			if(capturador.getSource()==btn_3){
+				segundoOperando = tres;
+			}
+			if(capturador.getSource()==btn_4){
+				segundoOperando = cuatro;
+			}
+			if(capturador.getSource()==btn_5){
+				segundoOperando = cinco;
+			}
+			if(capturador.getSource()==btn_6){
+				segundoOperando = seis;
+			}
+			if(capturador.getSource()==btn_7){
+				segundoOperando = siete;
+			}
+			if(capturador.getSource()==btn_8){
+				segundoOperando = ocho;
+			}
+			if(capturador.getSource()==btn_9){
+				segundoOperando = nueve;
+			}
+			asd.Alu(primerOperando[0],primerOperando[1],primerOperando[2],primerOperando[3],senalOperacion,segundoOperando[0],segundoOperando[1],segundoOperando[2],segundoOperando[3]);
+		}
+	}
 }
